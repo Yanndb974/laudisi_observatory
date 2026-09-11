@@ -9,7 +9,43 @@ than through the summaries and transcripts that come afterwards. So far it has b
 for three questions: how much of the agenda the channels share, where they diverge once the
 topic is held constant, and how the day is structured hour by hour.
 
-![How it fits together](architecture.svg)
+## How it fits together
+
+```mermaid
+flowchart TD
+    B[BFMTV] --> T[token manager + supervisor]
+    C[CNews] --> T
+    F[France Info] --> T
+
+    T --> A[Audio]
+    T --> K[Keyframes]
+
+    A --> V["Voice activity<br/>+ voice register"]
+    A --> R["Transcription<br/>+ diarisation"]
+    K --> O["On-screen<br/>text zones"]
+    K --> X[Faces]
+
+    V --> DB
+    R --> DB
+    O --> DB
+    X --> DB
+
+    DB["Time-aligned store · segments · banners · detections · voice and face registries"]
+
+    DB --> L[Topic layer]
+    DB --> M[Lexical and framing]
+    DB --> E[Export + QC]
+
+    classDef chan stroke-width:2px
+    class B,C,F chan
+    style B stroke:#c0392b
+    style C stroke:#1f6fb2
+    style F stroke:#6d4c9f
+    style X stroke:#b5651d,stroke-width:2px,stroke-dasharray:5 5
+    style DB fill:#f1ede6
+```
+
+Faces are held in the database but stay out of anything exported.
 
 ## What's here
 
@@ -29,7 +65,7 @@ from you.
 Metadata is in [`CITATION.cff`](CITATION.cff). In short:
 
 > de Boisvilliers, Y. (2026). *Observatoire Laudisi: a continuous multimodal observatory of
-> French rolling-news television.* https://github.com/USERNAME/laudisi
+> French rolling-news television.* https://github.com/Yanndebois974/laudisi_observatory
 
 ---
 

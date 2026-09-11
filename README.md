@@ -9,13 +9,12 @@ than through the summaries and transcripts that come afterwards. So far it has b
 for three questions: how much of the agenda the channels share, where they diverge once the
 topic is held constant, and how the day is structured hour by hour.
 
-![How it fits together](docs/architecture.svg)
+![How it fits together](architecture.svg)
 
 ## What's here
 
 Just this description and the diagram. The code, the models and the recordings aren't in
-this repository — the point of the repo is to have somewhere to point to when the project
-comes up, and a stable thing to cite.
+this repository.
 
 It was presented for the first time at the Computational Humanities Research Group seminar
 at King's College London, on 9 September 2026.
@@ -45,3 +44,9 @@ Ce dépôt ne contient que cette présentation et le schéma ; ni le code, ni le
 les enregistrements n'y figurent.
 
 © 2026 Yann de Boisvilliers — voir [`LICENSE`](LICENSE).
+
+---
+
+## Contact
+
+[✉️ yann.deboisvilliers@psl.eu](mailto:yann.deboisvilliers@psl.eu)

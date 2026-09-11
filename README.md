@@ -1,0 +1,1 @@
+# laudisi_observatory

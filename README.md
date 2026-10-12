@@ -1,8 +1,10 @@
 # Observatoire Laudisi
 
 Laudisi watches French rolling news. Since March 2026 it has been recording, transcribing
-and analysing BFMTV, CNews and France Info without interruption, putting the spoken word,
-who is speaking, and the text on screen onto one shared timeline.
+and analysing the French rolling-news channels without interruption — BFMTV, CNews,
+franceinfo and LCI nationally, plus seventeen regional channels (10 BFM local stations and
+7 France 3 stations) — putting the spoken word, who is speaking, and the text on screen
+onto one shared timeline.
 
 The idea is to look at continuous news as it actually goes out, minute by minute, rather
 than through the summaries and transcripts that come afterwards. So far it has been useful
@@ -16,16 +18,20 @@ flowchart TD
     B[BFMTV] --> T[token manager + supervisor]
     C[CNews] --> T
     F[France Info] --> T
+    LC[LCI] --> T
+    RG["17 regional channels<br/>BFM · France 3"] --> T
 
     T --> A[Audio]
     T --> K[Keyframes]
 
     A --> V["Voice activity<br/>+ voice register"]
+    A --> FP["Ad + simulcast<br/>fingerprints"]
     A --> R["Transcription<br/>+ diarisation"]
     K --> O["On-screen<br/>text zones"]
     K --> X[Faces]
 
     V --> DB
+    FP --> DB
     R --> DB
     O --> DB
     X --> DB
@@ -37,10 +43,12 @@ flowchart TD
     DB --> E[Export + QC]
 
     classDef chan stroke-width:2px
-    class B,C,F chan
+    class B,C,F,LC,RG chan
     style B stroke:#c0392b
     style C stroke:#1f6fb2
     style F stroke:#6d4c9f
+    style LC stroke:#e8542e
+    style RG stroke:#666,stroke-width:2px,stroke-dasharray:5 5
     style X stroke:#b5651d,stroke-width:2px,stroke-dasharray:5 5
     style DB fill:#f1ede6
 ```
@@ -65,16 +73,17 @@ from you.
 Metadata is in [`CITATION.cff`](CITATION.cff). In short:
 
 > de Boisvilliers, Y. (2026). *Observatoire Laudisi: a continuous multimodal observatory of
-> French rolling-news television.* https://github.com/Yanndebois974/laudisi_observatory
+> French rolling-news television.* https://github.com/Yanndb974/laudisi_observatory
 
 ---
 
 ## En bref
 
-Laudisi enregistre, transcrit et analyse en continu depuis mars 2026 les trois chaînes
-françaises d'information en continu — BFMTV, CNews et France Info. La parole, les locuteurs
-et les textes affichés à l'écran sont replacés sur une même ligne de temps, de façon à
-observer l'information en continu telle qu'elle est diffusée.
+Laudisi enregistre, transcrit et analyse en continu depuis mars 2026 l'information en
+continu en France — BFMTV, CNews, franceinfo et LCI au niveau national, et dix-sept
+chaînes régionales (10 antennes BFM locales et 7 antennes France 3). La parole, les
+locuteurs et les textes affichés à l'écran sont replacés sur une même ligne de temps, de
+façon à observer l'information telle qu'elle est diffusée.
 
 Ce dépôt ne contient que cette présentation et le schéma ; ni le code, ni les modèles, ni
 les enregistrements n'y figurent.

@@ -9,25 +9,30 @@ type: software
 authors:
   - family-names: de Boisvilliers
     given-names: Yann
+    email: yann.deboisvilliers@psl.eu
     affiliation: Université Paris-Dauphine–PSL / EHESS
     # orcid: 'https://orcid.org/0000-0000-0000-0000'
 abstract: >-
   Observatoire Laudisi is a research instrument that has
-  captured, transcribed and analysed France's three
-  rolling-news channels (BFMTV, CNews, France Info)
-  continuously since March 2026. Spoken word, speaker
-  identity and on-screen text are aligned on a single
-  timeline, supporting the study of agenda convergence
-  between channels, framing divergence at constant topic,
-  and the circadian structure of continuous news
-  programming.
+  captured, transcribed and analysed French rolling-news
+  television continuously since March 2026: four national
+  channels (BFMTV, CNews, franceinfo, LCI) and seventeen
+  regional ones (10 BFM local stations, 7 France 3 stations).
+  Audio and keyframes are recorded 24/7 and aligned on a
+  single timeline — spoken word, speaker identity and
+  on-screen banners — supporting the study of agenda
+  convergence between channels, framing divergence at
+  constant topic, and the circadian structure of continuous
+  news programming.
 keywords:
   - computational social science
   - media sociology
   - television news
   - agenda setting
   - multimodal corpora
+  - speech-to-text
+  - speaker diarization
 license: CC-BY-NC-ND-4.0
-date-released: '2026-09-11'
-version: '1.0'
-repository-code: 'https://github.com/Yanndebois974/laudisi_observatory'
+date-released: '2026-10-04'
+version: '4.30.0'
+repository-code: 'https://github.com/Yanndb974/laudisi_observatory'
